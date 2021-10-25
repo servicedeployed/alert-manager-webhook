@@ -75,7 +75,7 @@ func handleAlert(c *gin.Context) {
 
 	result := map[string]interface{}{}
 	client := resty.New()
-	_, err := client.R().
+	resp, err := client.R().
 		SetHeader("Accept", "application/json").
 		SetAuthToken(AuthToken).
 		SetBody(map[string]interface{}{"alerts": data.Alerts.Firing()}).
@@ -83,6 +83,10 @@ func handleAlert(c *gin.Context) {
 		Post(WebhookUrl)
 	if err != nil {
 		fmt.Printf("failed to send alerts to backend API %v", err)
+	}
+
+	if resp.StatusCode() != 200 {
+		fmt.Printf("Unsuccesful response from API\n%+v", resp.RawResponse)
 	}
 
 	c.String(200, "Ok")
