@@ -86,7 +86,7 @@ func handleAlert(c *gin.Context) {
 	}
 
 	if resp.StatusCode() != 200 {
-		fmt.Printf("Unsuccesful response from API\n%+v", resp.RawResponse)
+		fmt.Printf("Unsuccesful response from API\n%+v\nBody: %s", resp.RawResponse, string(resp.Body()))
 	}
 
 	c.String(200, "Ok")
