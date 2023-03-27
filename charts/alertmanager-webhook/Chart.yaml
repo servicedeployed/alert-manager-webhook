@@ -1,7 +1,7 @@
 apiVersion: v2
 name: alert-manager-webhook
 description: Service Deployed Alert Manager Webhook for provisioned clusters. Needs Prometheus.
-version: 1.0.3
+version: 1.0.5
 maintainers:
   - name: mp1-nathan-grey
     email: nathan.grey@megaport.com
