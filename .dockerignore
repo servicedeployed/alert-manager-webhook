@@ -1,4 +1,0 @@
-.dockerignore
-.gitlab-ci.yaml
-Dockerfile
-*.md
