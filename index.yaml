@@ -1,0 +1,17 @@
+apiVersion: v1
+entries:
+  alert-manager-webhook:
+  - apiVersion: v2
+    created: "2023-03-27T19:40:04.590622924Z"
+    description: Service Deployed Alert Manager Webhook for provisioned clusters.
+      Needs Prometheus.
+    digest: 7609c80671baff775c9ef41c0751d4b415af1ae0ab9d8bf30f5ec2559c6e69cb
+    maintainers:
+    - email: nathan.grey@megaport.com
+      name: mp1-nathan-grey
+      url: megaportone.com
+    name: alert-manager-webhook
+    urls:
+    - https://github.com/servicedeployed/alertmanager-webhook/releases/download/alert-manager-webhook-1.0.5/alert-manager-webhook-1.0.5.tgz
+    version: 1.0.5
+generated: "2023-03-27T19:40:04.590637024Z"
