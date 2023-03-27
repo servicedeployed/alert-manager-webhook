@@ -1,8 +1,0 @@
-include:
-  - project: "innovoedge/templates"
-    ref: main
-    file: "/gitlab/docker-image-ci.yml"
-
-docker-build:
-  extends: .docker-hub
-  stage: build
