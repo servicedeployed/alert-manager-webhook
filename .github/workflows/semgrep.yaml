@@ -1,0 +1,23 @@
+name: Semgrep
+
+on:
+  pull_request: {}
+  push:
+    branches: ["master", "main"]
+  schedule:
+    - cron: '0 17 * * *' 
+jobs:
+  semgrep:
+    name: Scan
+    runs-on: ubuntu-latest
+    container:
+      image: returntocorp/semgrep
+    if: (github.actor != 'dependabot[bot]')
+
+    steps:
+      # Fetch project source with GitHub Actions Checkout.
+      - uses: actions/checkout@v3
+      - run: semgrep ci --no-suppress-errors
+        env:
+          SECURE_LOG_LEVEL: debug
+          SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}
